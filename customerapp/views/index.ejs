@@ -1,5 +1,12 @@
 <% include partials/headers %>
     <h1>Add Customer</h1>
+    <% if(errors){ %>
+        <ul>
+            <% errors.forEach(function(error){ %>
+                <li><%=user.first_name %> <%=user.last_name %></li>
+            <% }) %>
+        </ul>
+    <% } %>
     <form method="POST" action="/users/add">
         <label>First Name</label>
         <br>
